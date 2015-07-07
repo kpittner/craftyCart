@@ -4,13 +4,13 @@
   <div class="products">
     <article class="photo" data-id="{{product.id}}">
       <header>
-        <img src="http://www.fillmurray.com/50/50" alt="" />
         <div class="">
-          <a href="#/{{product.id}}">{{product.title}}</a>
+          <a href="#/details/{{product.id}}">{{product.title}}</a>
         </div>
       </header>
       <div class="pContain">
           <img ng-src="{{product.image}}" alt="" />
+          <p>{{product.description}}</p>
       </div>
     </article>
   </div>

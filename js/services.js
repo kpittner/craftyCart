@@ -18,6 +18,12 @@
         return _.map(collection, function (obj) {
           return {image: obj.MainImage.url_570xN, title: obj.title, id: obj.category_id};
         });
+
+      var mapDataToSingleViewUrl = function (collection, keywords) {
+        return _.map(collection, function (obj) {
+          return {image: obj.MainImage.url_570xN, title: obj.title, id: obj.category_id, description: obj.description,
+          price: obj.price, materials: obj.materials, url: obj.url};
+        });
       };
 //build img url in obj with title and id
       var getProducts = function () {
@@ -29,9 +35,9 @@
 
       var getProduct = function (id) {
         return $http.jsonp(urlOpts.buildUrl()).then(function (products) {
-          var narrowedDownArr = _.where(products,
+          var narrowedDownArr = products.data.results,
             {id: id});
-            return mapDataToUrl(narrowedDownArr);
+            return mapDataToSingleViewUrl(narrowedDownArr);
         });
       };
 

@@ -18,7 +18,7 @@
         templateUrl: 'views/myCart.html',
         controller: 'CartController'
       })
-      .when('/detail/:photoId', {
+      .when('/details/:productId', {
         templateUrl: 'views/details.html',
         controller: 'MainController'
       })

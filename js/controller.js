@@ -9,7 +9,7 @@
       });
 
       ProductsService.getProduct($routeParams.productId).then(function (product) {
-        $scope.product = product;
+        $scope.singleProduct = product;
       });
 
     })
