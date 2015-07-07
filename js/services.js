@@ -16,14 +16,13 @@
 
       var mapDataToUrl = function (collection, keywords) {
         return _.map(collection, function (obj) {
-          return {image: obj.image, title: obj.title, id: obj.id};
+          return {image: obj.MainImage.url_570xN, title: obj.title, id: obj.category_id};
         });
       };
 //build img url in obj with title and id
       var getProducts = function () {
         return $http.jsonp(urlOpts.buildUrl()).then(function (products) {
-          var craftyArr = products;
-          console.log(craftyArr);
+          var craftyArr = products.data.results;
           return mapDataToUrl(craftyArr);
         });
       };
@@ -32,7 +31,7 @@
         return $http.jsonp(urlOpts.buildUrl()).then(function (products) {
           var narrowedDownArr = _.where(products,
             {id: id});
-            return mapDataToUrl(narrowedDownArr)[0];
+            return mapDataToUrl(narrowedDownArr);
         });
       };
 

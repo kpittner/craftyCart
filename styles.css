@@ -1,3 +1,7 @@
+.wrapper {
+  margin: 0;
+}
+
 .wrapper:before {
 
   content: "";
@@ -11,22 +15,66 @@
     height:800px;
   -webkit-filter: blur(5px);
   filter: blur(5px);
-  margin: 0;
 }
 
-.banner {
+.head {
+  top: 0;
   width: 100%;
   overflow: hidden;
   background-color: white;
-  height: 250px;
+  height: 100px;
   opacity: .8;
-  margin-top: 200px;
   float: left;
+  position: fixed;
 }
 
-.banner p {
+.head p {
   color: green;
   text-shadow: 2px 2px 8px black;
-  font-size: 150px;
-  margin-top: 35px;
+  font-size: 50px;
+  margin-top: -30px;
+  margin-left: 100px;
+  position: fixed;
+}
+
+.ng-binding {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+
+.pContain img {
+  align-items: center;
+}
+
+.octicon-paintcan{
+  color: green;
+  margin-top: 15px;
+  font-size: 50px;
+  margin-left: 10px;
+}
+
+.menuItems a {
+  color: green;
+  text-shadow: 2px 2px 8px black;
+  text-decoration: none;
+  font-size: 30px;
+  float: right;
+  margin-right: 20px;
+  margin-top: -80px;
+  position: fixed;
+}
+
+.menuItems a:hover {
+  color:
+}
+
+.individualProductBlock {
+  background-color: white;
+  height: 800px;
+  width: 700px;
+  margin-left: 350px;
+  padding-left: 50px;
+  margin-bottom: 30px;
 }

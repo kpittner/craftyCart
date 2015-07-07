@@ -3,18 +3,16 @@
 <div class="container">
   <div class="products">
     <article class="product" ng-repeat="product in products" data-id="{{product.id}}">
-      <header>
-        <img src="http://www.fillmurray.com/50/50" alt="" />
-        <div class="">
+      <div class="individualProductBlock">
+        <header>
           <a href="#/detail/{{product.id}}">{{product.title}}</a>
+        </header>
+        <div class="pContain">
+            <img ng-src="{{product.image}}" alt="" />
+            <div class="cart" ng-controller="CartController">
+            <span ng-click="addProduct(product)">Add to Cart</span>
+            </div>
         </div>
-        <a href="#">{{product.dt}}</a>
-      </header>
-      <div class="pContain">
-          <img ng-src="{{product.image}}" alt="" />
-          <div class="cart" ng-controller="CartController">
-          <span ng-click="addProduct(product)">&#9825;</span>
-          </div>
       </div>
     </article>
   </div>

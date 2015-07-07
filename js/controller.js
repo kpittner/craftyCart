@@ -4,6 +4,7 @@
     .module('craftyCart')
     .controller('MainController', function ($scope, ProductsService, $routeParams) {
       ProductsService.getProducts().then(function (products) {
+        console.log(products);
         $scope.products = products;
       });
 
