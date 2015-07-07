@@ -1,0 +1,32 @@
+.wrapper:before {
+
+  content: "";
+  position: fixed;
+  left:0;
+  right:0;
+  z-index: -1;
+  display: block;
+    background-image: url(http://creativityboutiques.com/wp-content/uploads/2015/06/arts-and-stuff.jpg);
+    background-size:cover;
+    height:800px;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  margin: 0;
+}
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  height: 250px;
+  opacity: .8;
+  margin-top: 200px;
+  float: left;
+}
+
+.banner p {
+  color: green;
+  text-shadow: 2px 2px 8px black;
+  font-size: 150px;
+  margin-top: 35px;
+}

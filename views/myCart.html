@@ -1,0 +1,17 @@
+<div ng-include="'views/nav.html'"></div>
+<div class="container">
+  <div class="products">
+    <article class="product" ng-repeat="product in cart" data-id="{{product.id}}">
+      <header>
+        <img src="http://www.fillmurray.com/50/50" alt="" />
+        <div class="">
+          <a href="#">{{product.title}}</a>
+        </div>
+        <a href="#">moment.dt</a>
+      </header>
+      <div class="pContain">
+          <img ng-src="{{product.image}}" alt="" />
+      </div>
+    </article>
+  </div>
+</div>
