@@ -6,17 +6,15 @@
   ])
   .config(function ($routeProvider) {
     $routeProvider
-    .when('#/products', {
+    .when('/products', {
       templateUrl: 'products/views/list.html',
       controller: 'ProductsController'
     })
-    .when('/details/:productId', {
+    .when('/products/details/:productId', {
       templateUrl: 'products/views/details.html',
       controller: 'ProductsController'
-    })
-    .otherwise({
-      redirectTo: '/404'
     });
+
 
   });
 

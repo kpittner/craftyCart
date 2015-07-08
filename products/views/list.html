@@ -2,7 +2,7 @@
   <div class="products">
     <article class="product" ng-repeat="product in products" data-id="{{product.id}}">
       <div class="individualProductBlock">
-          <a class="individualProductHeader" href="#/product/{{product.id}}">{{product.title}}</a>
+          <a class="individualProductHeader" href="#/products/details/{{product.id}}">{{product.title}}</a>
         <div class="pContain">
             <img ng-src="{{product.image}}" alt="" />
             <div class="price">${{product.price}}</div>

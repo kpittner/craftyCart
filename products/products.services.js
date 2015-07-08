@@ -18,9 +18,9 @@
 
       var mapDataToUrl = function (collection, keywords) {
         return _.map(collection, function (obj) {
-          console.log(obj);
           return {image: obj.MainImage.url_170x135, title: obj.title, id: obj.category_id, description: obj.description,
           price: obj.price, materials: obj.materials, url: obj.url};
+          console.log("Object: ", obj);
         });
       };
 
@@ -29,12 +29,12 @@
         var deferred = $q.defer();
         var cache = cacheEngine.get('products');
         if (cache) {
+          console.log('inside photo cache');
           deferred.resolve(cache);
         } else {
           $http.jsonp(urlOpts.buildUrl()).then(function (products) {
             var craftyArr = products.data.results;
-            console.log(craftyArr);
-            cacheEngine.put('products', (mapDataToUrl(craftyArr)));
+            cacheEngine.put('products', mapDataToUrl(craftyArr));
             deferred.resolve(mapDataToUrl(craftyArr));
           });
         }
@@ -46,19 +46,28 @@
         var cache = cacheEngine.get('products');
         if (cache) {
           console.log('single photo cache');
-          deferred.resolve(_.where(cache, {id: id})[0]);
+          deferred.resolve(_.where(cache, {id: id}));
         } else {
           $http.jsonp(urlOpts.buildUrl()).then(function (products) {
             var narrowedDownArr = _.where(products.data.results, {id: id});
             console.log(narrowedDownArr);
-              deferred.resolve(mapDataToUrl(narrowedDownArr)[0]);
+              deferred.resolve(mapDataToUrl(narrowedDownArr));
           });
         }
         return deferred.promise;
       };
 
+      var deleteProduct = function (product) {
+        $http.delete(url, product).success(function (resp) {
+          console.log(resp);
+        }).error(function (err) {
+          console.log(err);
+        });
+      };
+
       return {
         getProducts: getProducts,
+        deleteProduct: deleteProduct,
         getProduct: getProduct
       };
 

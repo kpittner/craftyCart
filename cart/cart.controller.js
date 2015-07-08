@@ -12,8 +12,18 @@
 
       $scope.addProduct = function (product) {
         CartService.addProduct(product);
+        $scope.reloadRoute = function() {
+           $route.reload();
+            }
+      };
+
+      $scope.deleteProduct = function (product) {
+        CartService.deleteProduct(product)
+        $scope.reloadRoute = function() {
+           $route.reload();
+            }
       };
 
 
     });
-})
+})();
