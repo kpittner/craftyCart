@@ -1,5 +1,6 @@
 .wrapper {
   margin: 0;
+  clear: both;
 }
 
 .wrapper:before {
@@ -10,59 +11,69 @@
   right:0;
   z-index: -1;
   display: block;
-    background-image: url(http://creativityboutiques.com/wp-content/uploads/2015/06/arts-and-stuff.jpg);
+    background-image: url(http://images4.fanpop.com/image/photos/22100000/Colored-pencils-pencils-22186617-1600-1200.jpg);
     background-size:cover;
     height:800px;
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
+}
+
+.col-md-4 {
+  width: 33%;
+  position: relative;
+  display: inline-block;
 }
 
 .head {
   top: 0;
   width: 100%;
   overflow: hidden;
-  background-color: white;
   height: 100px;
-  opacity: .8;
   float: left;
-  position: fixed;
+  clear: both;
 }
 
 .head p {
-  color: green;
-  text-shadow: 2px 2px 8px black;
+  color: black;
+  text-shadow: 2px 2px 8px green;
   font-size: 50px;
-  margin-top: -30px;
-  margin-left: 100px;
+  margin-top: 30px;
+  margin-left: 15px;
   position: fixed;
+}
+
+header {
+  margin-top: 50px;
 }
 
 .ng-binding {
   text-align: center;
   text-decoration: none;
   color: black;
-  font-size: 25px;
+  font-size: 20px;
+}
+
+.pContain {
+  text-align: center;
 }
 
 .pContain img {
   align-items: center;
 }
 
-.octicon-paintcan{
+.mega-octicon {
   color: green;
-  margin-top: 15px;
-  font-size: 50px;
-  margin-left: 10px;
 }
 
 .menuItems a {
-  color: green;
-  text-shadow: 2px 2px 8px black;
+  color: black;
+  text-shadow: 2px 2px 8px green;
   text-decoration: none;
   font-size: 30px;
-  float: right;
-  margin-right: 20px;
   margin-top: -80px;
+  margin-left: 1100px;
+}
+
+.topNav {
+  margin-top: 40px;
   position: fixed;
 }
 
@@ -72,9 +83,15 @@
 
 .individualProductBlock {
   background-color: white;
-  height: 800px;
+  opacity: .9;
+  border: 2px solid #ccc;
+  text-align: center;
   width: 700px;
-  margin-left: 350px;
-  padding-left: 50px;
-  margin-bottom: 30px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.addToCart {
+  text-decoration: none;
+  color: black;
 }

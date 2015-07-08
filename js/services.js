@@ -16,12 +16,7 @@
 
       var mapDataToUrl = function (collection, keywords) {
         return _.map(collection, function (obj) {
-          return {image: obj.MainImage.url_570xN, title: obj.title, id: obj.category_id};
-        });
-
-      var mapDataToSingleViewUrl = function (collection, keywords) {
-        return _.map(collection, function (obj) {
-          return {image: obj.MainImage.url_570xN, title: obj.title, id: obj.category_id, description: obj.description,
+          return {image: obj.MainImage.url_170x135, title: obj.title, id: obj.category_id, description: obj.description,
           price: obj.price, materials: obj.materials, url: obj.url};
         });
       };
@@ -35,9 +30,8 @@
 
       var getProduct = function (id) {
         return $http.jsonp(urlOpts.buildUrl()).then(function (products) {
-          var narrowedDownArr = products.data.results,
-            {id: id});
-            return mapDataToSingleViewUrl(narrowedDownArr);
+          var narrowedDownArr = products.data.results;
+            return mapDataToUrl(narrowedDownArr);
         });
       };
 

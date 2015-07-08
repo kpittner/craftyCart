@@ -10,7 +10,7 @@
         <div class="pContain">
             <img ng-src="{{product.image}}" alt="" />
             <div class="cart" ng-controller="CartController">
-            <span ng-click="addProduct(product)">Add to Cart</span>
+              <a href="#/myCart" class="addToCart" ng-click="addProduct(product)">Add to Cart</a>
             </div>
         </div>
       </div>

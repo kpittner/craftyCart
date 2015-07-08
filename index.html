@@ -8,10 +8,20 @@
 </head>
 <body class="wrapper" ng-app="craftyCart">
   <div class="head">
-    <span class="mega-octicon octicon-paintcan"></span>
-    <p>Crafty Cart</p>
+    <p><span class="mega-octicon octicon-paintcan" style="font-size: 60px;"></span>
+      Crafty Cart</p>
+    <nav>
+      <div class="topNav">
+        <a href="#/" class="brand"></a>
+        <div class="menuItems">
+          <a href="#/">Continue Shopping</a>
+          <a href="#/myCart">Cart</a>
+        </div>
+      </div>
+    </nav>
   </div>
 <ng-view></ng-view>
+
 
 
 
@@ -22,6 +32,8 @@
   <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
   <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+  <!-- // <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.js"> -->
+
 
 
   <script src="js/app.js" charset="utf-8"></script>

@@ -5,7 +5,8 @@
   angular
   .module('craftyCart', [
     'ngRoute',
-    'underscore',
+    'underscore'
+    // 'bootstrap'
     // 'moment'
   ])
   .config(function ($routeProvider) {
@@ -31,6 +32,11 @@
     .factory('_', function ($window) {
       return $window._;
     });
+  // angular
+  //   .module('bootstrap', ['ui.bootstrap'])
+  //   .factory('bootstrap', function ($window) {
+  //     return $window.bootstrap;
+  //   });
   // angular
   //   .module('moment', [])
   //   .factory('moment', function ($window) {
