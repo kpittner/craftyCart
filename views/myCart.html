@@ -1,15 +1,22 @@
 <div ng-include="'views/nav.html'"></div>
 <div class="container">
   <div class="products">
-    <article class="product" ng-repeat="product in cart" data-id="{{product.id}}">
+    <article class="product" ng-repeat="products in cart" data-id="{{product.id}}">
       <header>
+        <ul class="checkoutBar">
+          <li>Product</li>
+          <li>Price</li>
+          <li>Quantity</li>
+          <li>Subtotal</li>
+        </ul>
         <img src="{{mainImage.url_75x75}}" alt="" />
         <div class="">
           <a href="#">{{product.title}}</a>
+          <div>{{product.price}}</div>
         </div>
       </header>
       <div class="pContain">
-          <img ng-src="{{product.image}}" alt="" />
+        <!-- total -->
       </div>
     </article>
   </div>

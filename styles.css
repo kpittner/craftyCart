@@ -95,3 +95,13 @@ header {
   text-decoration: none;
   color: black;
 }
+
+.checkoutBar {
+  background-color: white;
+  opacity: .9;
+  border: 2px solid #ccc;
+  width: 1000px;
+  margin: 0 auto;
+  display: inline-block;
+  text-decoration: none;
+}

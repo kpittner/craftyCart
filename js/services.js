@@ -20,7 +20,8 @@
           price: obj.price, materials: obj.materials, url: obj.url};
         });
       };
-//build img url in obj with title and id
+
+
       var getProducts = function () {
         return $http.jsonp(urlOpts.buildUrl()).then(function (products) {
           var craftyArr = products.data.results;
@@ -30,7 +31,7 @@
 
       var getProduct = function (id) {
         return $http.jsonp(urlOpts.buildUrl()).then(function (products) {
-          var narrowedDownArr = products.data.results;
+          var narrowedDownArr = (products.data.results, {id: id});
             return mapDataToUrl(narrowedDownArr);
         });
       };
@@ -42,9 +43,9 @@
 
     })
     .factory('CartService', function ($http) {
-      var url = 'http://tiy-fee-rest.herokuapp.com/collections/craftyCart';
+      var url = 'http://tiy-fee-rest.herokuapp.com/collections/craftyCarts';
       var addProduct = function (product) {
-        $http.post(ur, product).success(function (resp) {
+        $http.post(url, product).success(function (resp) {
           console.log(resp);
         }).error(function (err) {
           console.log(err);

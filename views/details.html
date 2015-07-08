@@ -2,14 +2,16 @@
 
 <div class="container">
   <div class="products">
-    <article class="photo" data-id="{{product.id}}">
+    <article class="product" data-id="{{product.id}}">
       <header>
         <div class="">
           <a href="#/details/{{product.id}}">{{product.title}}</a>
+          <a href="#/details/{{product.id}}">{{product.url}}</a>
         </div>
       </header>
       <div class="pContain">
           <img ng-src="{{product.image}}" alt="" />
+          <div>{{product.price}}</div>
           <div>{{product.description}}</div>
           <div>{{product.materials}}</div>
       </div>
