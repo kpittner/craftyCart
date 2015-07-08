@@ -1,4 +1,7 @@
 <div class="container">
+  <input ng-model="searchAny" class="searchBox" placeholder="Search">
+    <div ng-repeat="product in products | filter:searchAny">
+    </div>
   <div class="products">
     <article class="product" ng-repeat="product in products" data-id="{{product.id}}">
       <div class="individualProductBlock">

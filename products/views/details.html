@@ -1,12 +1,10 @@
 <div class="container">
   <div class="products">
     <article class="product" data-id="{{product.category_id}}">
-      <header>
         <div class="individualProductBlock">
           <a class="individualProductHeader" href="#/product/details/{{product.category_id}}">{{product.title}}</a>
           <a class="individualProductHeader" href="#/product/details/{{product.category_id}}" {{product.url}}>View on Etsy</a>
         </div>
-      </header>
       <div class="pContain">
           <img ng-src="{{product.image}}" alt="" />
           <div class="price">${{product.price}}</div>

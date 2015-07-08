@@ -8,7 +8,7 @@
       });
       if ($routeParams.productId) {
       ProductsService.getProduct($routeParams.productId).then(function (product) {
-        $scope.getProduct = product;
+        $scope.product = product;
       });
     }
 

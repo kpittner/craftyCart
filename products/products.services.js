@@ -18,7 +18,7 @@
 
       var mapDataToUrl = function (collection, keywords) {
         return _.map(collection, function (obj) {
-          return {image: obj.MainImage.url_170x135, title: obj.title, id: obj.category_id, description: obj.description,
+          return {image: obj.MainImage.url_170x135, title: obj.title, id: obj.listing_id, description: obj.description,
           price: obj.price, materials: obj.materials, url: obj.url};
           console.log("Object: ", obj);
         });
@@ -49,9 +49,9 @@
           deferred.resolve(_.where(cache, {id: id}));
         } else {
           $http.jsonp(urlOpts.buildUrl()).then(function (products) {
-            var narrowedDownArr = _.where(products.data.results, {id: id});
-            console.log(narrowedDownArr);
-              deferred.resolve(mapDataToUrl(narrowedDownArr));
+            var narrowedDownArr = _.where(products.data.results, {listing_id: +id});
+            console.log('narrowed down: ', narrowedDownArr);
+              deferred.resolve(mapDataToUrl(narrowedDownArr)[0]);
           });
         }
         return deferred.promise;
@@ -67,9 +67,14 @@
 
       return {
         getProducts: getProducts,
-        deleteProduct: deleteProduct,
-        getProduct: getProduct
+        getProduct: getProduct,
+        deleteProduct: deleteProduct
       };
+
+
+      var searchAny = element(by.model('search.$'));
+      searchAny.clear();
+      searchAny.sendKeys('i');
 
     })
 
