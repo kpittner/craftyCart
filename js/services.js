@@ -43,7 +43,7 @@
 
     })
     .factory('CartService', function ($http) {
-      var url = 'http://tiy-fee-rest.herokuapp.com/collections/craftyCarts';
+      var url = 'http://tiy-fee-rest.herokuapp.com/collections/CraftyCarts';
       var addProduct = function (product) {
         $http.post(url, product).success(function (resp) {
           console.log(resp);

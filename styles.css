@@ -29,6 +29,7 @@
   height: 100px;
   float: left;
   clear: both;
+  margin-bottom: 100px;
 }
 
 .head p {
@@ -101,7 +102,11 @@ header {
   opacity: .9;
   border: 2px solid #ccc;
   width: 1000px;
+  height: 100px;
   margin: 0 auto;
-  display: inline-block;
-  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: 25px;
+  align-items: center;
 }
