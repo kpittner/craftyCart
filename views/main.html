@@ -1,19 +1,4 @@
-<div ng-include="'views/nav.html'"></div>
-
 <div class="container">
-  <div class="products">
-    <article class="product" ng-repeat="product in products" data-id="{{product.id}}">
-      <div class="individualProductBlock">
-        <header>
-          <a href="#/details/{{product.id}}">{{product.title}}</a>
-        </header>
-        <div class="pContain">
-            <img ng-src="{{product.image}}" alt="" />
-            <div class="cart" ng-controller="CartController">
-              <a href="#/myCart" class="addToCart" ng-click="addProduct(product)">Add to Cart</a>
-            </div>
-        </div>
-      </div>
-    </article>
-  </div>
+
+  
 </div>

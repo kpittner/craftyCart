@@ -41,7 +41,7 @@
   position: fixed;
 }
 
-header {
+.individualProductHeader {
   margin-top: 50px;
 }
 
@@ -54,6 +54,8 @@ header {
 
 .pContain {
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .pContain img {
@@ -84,12 +86,13 @@ header {
 
 .individualProductBlock {
   background-color: white;
-  opacity: .9;
+  opacity: .85;
   border: 2px solid #ccc;
   text-align: center;
   width: 700px;
   margin: 0 auto;
   margin-bottom: 20px;
+  padding-top: 30px;
 }
 
 .addToCart {

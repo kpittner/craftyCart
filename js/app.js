@@ -1,11 +1,11 @@
 (function () {
   'use strict';
-
-
   angular
   .module('craftyCart', [
     'ngRoute',
-    'underscore'
+    'underscore',
+    'products',
+    'cart'
     // 'bootstrap'
     // 'moment'
   ])
@@ -13,14 +13,6 @@
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainController'
-      })
-      .when('/myCart', {
-        templateUrl: 'views/myCart.html',
-        controller: 'CartController'
-      })
-      .when('/details/:productId', {
-        templateUrl: 'views/details.html',
         controller: 'MainController'
       })
       .otherwise({
