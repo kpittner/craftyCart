@@ -7,7 +7,7 @@
       <div class="individualProductBlock">
           <a class="individualProductHeader" href="#/products/details/{{product.id}}">{{product.title}}</a>
         <div class="pContain">
-            <img ng-src="{{product.image}}" alt="" />
+            <img ng-src="{{product.imageMed}}" alt="" />
             <div class="price">${{product.price}}</div>
             <div class="cart" ng-controller="CartController">
               <a href="#/myCart" class="addToCart" ng-click="addProduct(product)">Add to Cart</a>

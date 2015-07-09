@@ -7,19 +7,18 @@
       var cacheEngine = $cacheFactory('products') ;
 
       var urlOpts = {
-        baseUrl: 'https://openapi.etsy.com/v2/listings/active.js?',
+        baseUrl: 'https://openapi.etsy.com/v2/listings/active.js?includes=MainImage&keywords=frogs&api_key=',
         apiKey: 'tnaz2je0w5seue0pt3wlwq4j',
-        includes: 'MainImage',
-        buildUrl: function (keywords) {
-          return this.baseUrl + 'includes=' + this.includes + '&keywords=frogs' +
-          '&api_key=' + this.apiKey + '&callback=JSON_CALLBACK';
+        callback: '&callback=JSON_CALLBACK',
+        buildUrl: function(){
+          return this.baseUrl + this.apiKey + this.callback;
         }
       };
 
       var mapDataToUrl = function (collection, keywords) {
         return _.map(collection, function (obj) {
           console.log(obj.listing_id);
-          return {imageMed: obj.MainImage.url_170x135, imageLarge: obj.MainImage.url_570xN, title: obj.title, id: obj.listing_id, description: obj.description,
+          return {imageSmall: obj.MainImage.url_75x75, imageMed: obj.MainImage.url_170x135, imageLarge: obj.MainImage.url_570xN, title: obj.title, id: obj.listing_id, description: obj.description,
           price: obj.price, materials: obj.materials, url: obj.url};
           console.log("Object: ", obj);
         });
