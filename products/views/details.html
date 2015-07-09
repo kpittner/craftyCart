@@ -1,18 +1,18 @@
 <div class="container">
   <div class="products">
-    <article class="product" data-id="{{product.category_id}}">
+    <article class="product" data-id="{{product.id}}">
         <div class="individualProductBlock">
-          <a class="individualProductHeader" href="#/product/details/{{product.category_id}}">{{product.title}}</a>
-          <a class="individualProductHeader" href="#/product/details/{{product.category_id}}" {{product.url}}>View on Etsy</a>
-        </div>
-      <div class="pContain">
+          <a class="individualProductHeader" href="#/product/details/{{product.id}}">{{product.title}}</a><br>
+          <a class="individualProductHeader" href="#/product/details/{{product.id}}" {{product.url}}>View on Etsy</a>
+        <div class="pContain">
           <img ng-src="{{product.image}}" alt="" />
           <div class="price">${{product.price}}</div>
-          <div class="description">{{product.description}}</div>
-          <div class="materials">{{product.materials}}</div>
+          <div class="description"><p>{{ letters | limitTo:letterLimit }}</p>{{product.description}}</div>
+          <div class="materials">Materials: {{product.materials}}</div>
           <div class="cart" ng-controller="CartController">
             <a href="#/myCart" class="addToCart" ng-click="addProduct(product)">Add to Cart</a>
           </div>
+        </div>
       </div>
     </article>
   </div>

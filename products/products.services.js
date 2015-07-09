@@ -18,6 +18,7 @@
 
       var mapDataToUrl = function (collection, keywords) {
         return _.map(collection, function (obj) {
+          console.log(obj.listing_id);
           return {image: obj.MainImage.url_170x135, title: obj.title, id: obj.listing_id, description: obj.description,
           price: obj.price, materials: obj.materials, url: obj.url};
           console.log("Object: ", obj);
@@ -42,6 +43,7 @@
       };
 
       var getProduct = function (id) {
+        console.log(id);
         var deferred = $q.defer();
         var cache = cacheEngine.get('products');
         if (cache) {
@@ -49,6 +51,7 @@
           deferred.resolve(_.where(cache, {id: id}));
         } else {
           $http.jsonp(urlOpts.buildUrl()).then(function (products) {
+            console.log('products: ', _.where(products.data.results, {listing_id: +id}));
             var narrowedDownArr = _.where(products.data.results, {listing_id: +id});
             console.log('narrowed down: ', narrowedDownArr);
               deferred.resolve(mapDataToUrl(narrowedDownArr)[0]);

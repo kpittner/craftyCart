@@ -12,6 +12,8 @@
       });
     }
 
+    // $scope.letterLimit = 50;
+
     $scope.deleteProduct = function (product) {
       CartService.deleteProduct(product)
       $scope.reloadRoute = function() {
