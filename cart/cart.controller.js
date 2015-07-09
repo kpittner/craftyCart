@@ -19,11 +19,8 @@
 
       $scope.deleteProduct = function (product) {
         CartService.deleteProduct(product)
-        $scope.reloadRoute = function() {
-           $route.reload();
-            }
+        $scope.$broadcast(product);
       };
-
 
     });
 })();

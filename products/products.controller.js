@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('products')
-    .controller('ProductsController', function ($scope, ProductsService, $routeParams) {
+    .controller('ProductsController', function ($scope, ProductsService, $routeParams, $rootScope) {
       ProductsService.getProducts().then(function (products) {
         $scope.products = products;
       });
@@ -11,15 +11,8 @@
         $scope.product = product;
       });
     }
-
+  
     // $scope.letterLimit = 50;
-
-    $scope.deleteProduct = function (product) {
-      CartService.deleteProduct(product)
-      $scope.reloadRoute = function() {
-         $route.reload();
-          }
-    };
 
   });
 })();

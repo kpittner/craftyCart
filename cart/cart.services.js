@@ -19,6 +19,15 @@
         });
       };
 
+      // $scope.cartTotal = function (products) {
+      //   var total = 0;
+      //   for (var i =0; i < $scope.products.length; i++) {
+      //     var wantedProducts = $scope.products[i];
+      //     total += (product.price * product.quantity);
+      //   }
+      //   return total;
+      // }
+
       var getCart = function () {
         return $http.get(url);
       }

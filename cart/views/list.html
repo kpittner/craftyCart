@@ -9,14 +9,14 @@
     <article class="product" data-id="{{product.id}}">
       <header>
         <div class="individualProductBlock">
-          <a class="individualProductHeader" href="#/cart/{{product.id}}">{{product.title}}</a>
-          <a href="#/myCart" class="deleteFromCart" ng-click="deleteProduct(product)">Delete</a>
+          <a class="individualProductHeader" href="#/myCart/{{product.id}}">{{product.title}}</a>
+          <a href="#/myCart" class="deleteFromCart" ng-click="deleteProduct()">Delete</a>
           <img src="{{mainImage.url_75x75}}" alt="" />
           <div class="price">${{product.price}}</div>
       </header>
       <div class="pContain">
-
         <!-- total -->
+        <!-- <div class="totalPrice">${{cartTotal()}}</div> -->
       </div>
     </article>
   </div>

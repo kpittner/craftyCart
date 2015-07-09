@@ -19,12 +19,11 @@
       var mapDataToUrl = function (collection, keywords) {
         return _.map(collection, function (obj) {
           console.log(obj.listing_id);
-          return {image: obj.MainImage.url_170x135, title: obj.title, id: obj.listing_id, description: obj.description,
+          return {imageMed: obj.MainImage.url_170x135, imageLarge: obj.MainImage.url_570xN, title: obj.title, id: obj.listing_id, description: obj.description,
           price: obj.price, materials: obj.materials, url: obj.url};
           console.log("Object: ", obj);
         });
       };
-
 
       var getProducts = function () {
         var deferred = $q.defer();
@@ -35,7 +34,6 @@
         } else {
           $http.jsonp(urlOpts.buildUrl()).then(function (products) {
             var craftyArr = products.data.results;
-            console.log(craftyArr);
             cacheEngine.put('products', mapDataToUrl(craftyArr));
             deferred.resolve(mapDataToUrl(craftyArr));
           });
