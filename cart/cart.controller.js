@@ -6,21 +6,21 @@
 
       if ($location.url() === '/myCart') {
         CartService.getCart().success(function (cart) {
+          console.log("Test:", cart)
           $scope.carts = cart;
-        })
+        }).then(function(carts) {
+          var total = CartService.cartTotal(carts.data);
+          $scope.totalPrice = total;
+        });
       };
 
       $scope.addProduct = function (product) {
         CartService.addProduct(product);
-      };
+      }
 
       $scope.deleteProduct = function (id) {
         console.log(id);
         CartService.deleteProduct(id);
-      };
-
-      $scope.cartTotal = function (carts) {
-        CartService.cartTotal(carts);
       }
 
       var watchCallback = function (carts) {
@@ -29,9 +29,8 @@
         });
       }
 
-
-      $scope.$on("product:deleted", watchCallback);
       $scope.$on("product:added", watchCallback);
+      $scope.$on("product:deleted", watchCallback);
 
     });
 })();

@@ -6,12 +6,11 @@
       var url = 'http://tiy-fee-rest.herokuapp.com/collections/CraftyCarts';
       var addProduct = function (product) {
         $http.post(url, product).success(function () {
-          $rootScope.$broadcast("product: added");
+          $rootScope.$broadcast("product:added");
         });
       }
 
       var deleteProduct = function (id) {
-        console.log(id);
         $http.delete(url + '/' + id).success(function () {
           $rootScope.$broadcast("product:deleted");
         });
@@ -19,9 +18,11 @@
 
       var cartTotal = function (products) {
         var total = 0;
-        for (var i =0; i < $scope.products.length; i++) {
-          total += ($scope.products[i].price + $scope.products[i].price);
+        for (var i = 0; i < products.length; i++) {
+          var item = products[i];
+          total += (+item.price);
         }
+        console.log("TOTAL: ", total);
         return total;
       }
 
