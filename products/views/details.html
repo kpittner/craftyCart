@@ -3,7 +3,7 @@
     <article class="product" data-id="{{product.id}}">
         <div class="individualProductBlock">
           <a class="individualProductHeader" href="#/products/details/{{product.id}}">{{product.title}}</a><br>
-          <a href="#/products/details/{{product.id}}" {{product.url}}>View on Etsy</a>
+          <a href="{{product.url}}">View on Etsy</a>
         <div class="pContain">
           <img ng-src="{{product.imageLarge}}" alt="" />
           <div class="price">${{product.price}}</div>

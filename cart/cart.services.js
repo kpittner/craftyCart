@@ -22,7 +22,6 @@
           var item = products[i];
           total += (+item.price);
         }
-        $rootScope.$broadcast("price:updated");
         return total;
       }
 

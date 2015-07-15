@@ -65,11 +65,6 @@
         getProduct: getProduct,
       };
 
-
-      // var searchAny = element(by.model('search.$'));
-      // searchAny.clear();
-      // searchAny.sendKeys('i');
-
     })
 
 })();

@@ -6,6 +6,7 @@
 
       if ($location.url() === '/myCart') {
         CartService.getCart().success(function (cart) {
+          $scope.$broadcast("price:updated");
           console.log("Test:", cart)
           $scope.carts = cart;
         }).then(function(carts) {
