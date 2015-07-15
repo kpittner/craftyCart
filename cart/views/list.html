@@ -6,19 +6,20 @@
     <li>Subtotal</li>
   </ul>
   <div class="products">
-    <article class="product" data-id="{{product.id}}">
+    <article class="product" ng-repeat="product in carts" data-id="{{product.id}}">
       <header>
-        <div class="individualProductBlock">
-          <a class="individualProductHeader" href="#/myCart/{{product.id}}">{{product.title}}</a>
-          <a href="#/myCart" class="deleteFromCart" ng-click="deleteProduct()">Delete</a>
+        <div class="individualCartBlock">
+          <a class="individualCartItem" href="#/products/details/{{product.id}}">{{ product.title | limitTo: 20 }}{{title.length > 20 ? '...' : ''}}</a>
+          <div class="cartDelete" ng-controller="CartController">
+            <a href="#/myCart" class="deleteFromCart" ng-click="deleteProduct(product)">Delete</a>
+          </div>
           <img src="{{product.imageSmall}}" alt="" />
-          <div class="price">${{product.price}}</div>
+          <div class="cartPrice">${{product.price}}</div>
       </header>
-      <div class="pContain">
-        <!-- total -->
-        <!-- <div class="totalPrice">${{cartTotal()}}</div> -->
-      </div>
     </article>
+    <div class="pContain">
+      <div class="totalPrice">${{cartTotal}}</div>
+    </div>
   </div>
 </div>
 </div>

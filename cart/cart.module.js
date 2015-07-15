@@ -10,9 +10,9 @@
         templateUrl: 'cart/views/list.html',
         controller: 'CartController'
       })
-      .otherwise({
-        redirectTo: '/404'
-      });
+      // .otherwise({
+      //   redirectTo: '/404'
+      // });
     })
 
 })();

@@ -7,7 +7,7 @@
         <div class="pContain">
           <img ng-src="{{product.imageLarge}}" alt="" />
           <div class="price">${{product.price}}</div>
-          <div class="description">{{product.description}}</div>
+          <div class="description">{{ product.description | limitTo: 200 }}{{description.length > 200 ? '' : '...'}}</div>
           <div class="materials">Materials: {{product.materials}}</div>
           <div class="cart" ng-controller="CartController">
             <a href="#/myCart" class="addToCart" ng-click="addProduct(product)">Add to Cart</a>
