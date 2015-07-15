@@ -11,7 +11,7 @@
         <div class="individualCartBlock">
           <a class="individualCartItem" href="#/products/details/{{product.id}}">{{ product.title | limitTo: 20 }}{{title.length > 20 ? '...' : ''}}</a>
           <div class="cartDelete" ng-controller="CartController">
-            <a href="#/myCart" class="deleteFromCart" ng-click="deleteProduct(product)">Delete</a>
+            <a href="#/myCart" class="deleteFromCart" ng-click="deleteProduct(product._id)">Delete</a>
           </div>
           <img src="{{product.imageSmall}}" alt="" />
           <div class="cartPrice">${{product.price}}</div>

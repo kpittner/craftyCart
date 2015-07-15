@@ -5,13 +5,14 @@
     .factory('CartService', function ($http, $rootScope) {
       var url = 'http://tiy-fee-rest.herokuapp.com/collections/CraftyCarts';
       var addProduct = function (product) {
-        $http.post(url, product).success(function (resp) {
-          $rootScope.$broadcast("product:added");
+        $http.post(url, product).success(function () {
+          $rootScope.$broadcast("product: added");
         });
       }
 
-      var deleteProduct = function (product) {
-        $http.delete(url, product).success(function () {
+      var deleteProduct = function (id) {
+        console.log(id);
+        $http.delete(url + '/' + id).success(function () {
           $rootScope.$broadcast("product:deleted");
         });
       }

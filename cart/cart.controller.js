@@ -7,7 +7,6 @@
       if ($location.url() === '/myCart') {
         CartService.getCart().success(function (cart) {
           $scope.carts = cart;
-          $scope.$broadcast(cart);
         })
       };
 
@@ -15,13 +14,24 @@
         CartService.addProduct(product);
       };
 
-      $scope.deleteProduct = function (product) {
-        carts.splice(carts.indexOf(product), 1);
+      $scope.deleteProduct = function (id) {
+        console.log(id);
+        CartService.deleteProduct(id);
       };
 
       $scope.cartTotal = function (carts) {
         CartService.cartTotal(carts);
       }
+
+      var watchCallback = function (carts) {
+        CartService.getCart().success(function (cart) {
+          $scope.carts = cart;
+        });
+      }
+
+
+      $scope.$on("product:deleted", watchCallback);
+      $scope.$on("product:added", watchCallback);
 
     });
 })();
