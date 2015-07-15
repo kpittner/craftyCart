@@ -29,6 +29,7 @@
         });
       }
 
+      $scope.$on("price:updated", watchCallback);
       $scope.$on("product:added", watchCallback);
       $scope.$on("product:deleted", watchCallback);
 
