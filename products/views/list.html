@@ -1,9 +1,9 @@
 <div class="container">
-  <input ng-model="searchAny" class="searchBox" placeholder="Search">
-    <div ng-repeat="product in products | filter:searchAny">
+  <input ng-model="search" class="searchBox" placeholder="Search">
+    <div ng-repeat="product in products | filter:search">
     </div>
   <div class="products">
-    <article class="product" ng-repeat="product in products" data-id="{{product.id}}">
+    <article class="product" ng-repeat="product in products | filter:search:strict" data-id="{{product.id}}">
       <div class="individualProductBlock">
           <a class="individualProductHeader" href="#/products/details/{{product.id}}">{{product.title}}</a>
         <div class="pContain">

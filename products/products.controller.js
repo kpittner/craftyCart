@@ -3,7 +3,7 @@
   angular
     .module('products')
     .controller('ProductsController', function ($scope, ProductsService, $routeParams, $rootScope) {
-      
+
       ProductsService.getProducts().then(function (products) {
         $scope.products = products;
       });
@@ -13,8 +13,6 @@
           $scope.product = product;
         });
       }
-
-    // $scope.letterLimit = 50;
 
   });
 })();

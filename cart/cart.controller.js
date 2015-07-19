@@ -6,12 +6,12 @@
 
       if ($location.url() === '/myCart') {
         CartService.getCart().success(function (cart) {
-          $scope.$broadcast("price:updated");
           console.log("Test:", cart)
           $scope.carts = cart;
         }).then(function(carts) {
           var total = CartService.cartTotal(carts.data);
           $scope.totalPrice = total;
+          $scope.$broadcast("price:updated");
         });
       };
 
