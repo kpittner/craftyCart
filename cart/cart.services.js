@@ -23,6 +23,7 @@
           total += (+item.price);
         }
         return total;
+        $rootScope.$broadcast("price:updated");
       }
 
       var getCart = function () {

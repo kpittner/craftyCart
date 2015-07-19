@@ -11,7 +11,6 @@
         }).then(function(carts) {
           var total = CartService.cartTotal(carts.data);
           $scope.totalPrice = total;
-          $scope.$broadcast("price:updated");
         });
       };
 
